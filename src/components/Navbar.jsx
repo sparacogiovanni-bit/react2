@@ -1,6 +1,4 @@
-import {
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
   useContext,
@@ -10,13 +8,26 @@ import {
   AuthContext,
 } from "../context/AuthContext";
 
+import useScroll from "../hooks/useScroll";
+
 function Navbar() {
   
   const { user } =
   useContext(AuthContext);
   
+  const scrollY =
+  useScroll();
+  
   return (
-    <nav className="navbar">
+    <nav
+    className="navbar"
+    style={{
+      backgroundColor:
+      scrollY > 50
+      ? "darkblue"
+      : "black",
+    }}
+    >
     
     <ul className="nav-list">
     
@@ -32,7 +43,6 @@ function Navbar() {
       Posts
       </Link>
       </li>
-      
     )}
     
     <li>
