@@ -7,12 +7,21 @@ import {
 
 import router from "./routing/router.jsx";
 
+import AuthProvider from "./context/AuthContext";
+
 import "./index.css";
 
 ReactDOM.createRoot(
   document.getElementById("root")
-).render(
-
-  <RouterProvider router={router} />
-
+).render
+  (
+  
+  <AuthProvider>
+  
+  <RouterProvider
+  router={router}
+  />
+  
+  </AuthProvider>
+  
 );
