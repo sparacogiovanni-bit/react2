@@ -8,7 +8,11 @@ function Layout() {
     <>
       <Navbar />
 
-      <Outlet />
+      <main className="pt-24">
+
+        <Outlet />
+
+      </main>
     </>
   );
 }

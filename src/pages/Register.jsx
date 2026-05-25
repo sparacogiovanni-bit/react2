@@ -32,6 +32,14 @@ function Register() {
     
     e.preventDefault();
     
+    if (
+      !name ||
+      !email ||
+      !password
+    ) {
+      return;
+    }
+    
     login({
       name,
       email,
@@ -41,20 +49,25 @@ function Register() {
   }
   
   return (
-    <div className="container">
+    <div className="hero min-h-screen">
     
-    <h1>
+    <div className="card bg-base-200 w-96 shadow-xl">
+    
+    <div className="card-body">
+    
+    <h1 className="text-3xl font-bold text-center">
     Register
     </h1>
     
     <form
-    className="auth-form"
     onSubmit={handleSubmit}
+    className="flex flex-col gap-4"
     >
     
     <input
     type="text"
     placeholder="Inserisci nome"
+    className="input input-bordered"
     value={name}
     onChange={(e) =>
       setName(e.target.value)
@@ -64,6 +77,7 @@ function Register() {
     <input
     type="email"
     placeholder="Inserisci email"
+    className="input input-bordered"
     value={email}
     onChange={(e) =>
       setEmail(e.target.value)
@@ -73,17 +87,20 @@ function Register() {
     <input
     type="password"
     placeholder="Inserisci password"
+    className="input input-bordered"
     value={password}
     onChange={(e) =>
       setPassword(e.target.value)
     }
     />
     
-    <button>
+    <button className="btn btn-primary">
     Registrati
     </button>
     
     </form>
+    </div>
+    </div>
     </div>
   );
 }

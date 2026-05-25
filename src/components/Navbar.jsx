@@ -19,46 +19,59 @@ function Navbar() {
   useScroll();
   
   return (
-    <nav
-    className="navbar"
-    style={{
-      backgroundColor:
+    <div
+    className={
       scrollY > 50
-      ? "darkblue"
-      : "black",
-    }}
+      ? "navbar bg-primary fixed top-0 z-50"
+      : "navbar bg-neutral fixed top-0 z-50"
+    }
     >
     
-    <ul className="nav-list">
+    <div className="flex-1">
     
-    <li>
-    <Link to="/">
+    <Link
+    to="/"
+    className="btn btn-ghost text-xl"
+    >
+    React App
+    </Link>
+    
+    </div>
+    
+    <div className="flex gap-2">
+    
+    <Link
+    to="/"
+    className="btn btn-ghost"
+    >
     Home
     </Link>
-    </li>
     
     {user && (
-      <li>
-      <Link to="/posts">
+      <Link
+      to="/posts"
+      className="btn btn-ghost"
+      >
       Posts
       </Link>
-      </li>
     )}
     
-    <li>
-    <Link to="/login">
+    <Link
+    to="/login"
+    className="btn btn-ghost"
+    >
     Login
     </Link>
-    </li>
     
-    <li>
-    <Link to="/register">
+    <Link
+    to="/register"
+    className="btn btn-ghost"
+    >
     Register
     </Link>
-    </li>
     
-    </ul>
-    </nav>
+    </div>
+    </div>
   );
 }
 
