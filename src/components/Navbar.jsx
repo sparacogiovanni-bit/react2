@@ -56,20 +56,24 @@ function Navbar() {
       </Link>
     )}
     
-    <Link
-    to="/login"
-    className="btn btn-ghost"
-    >
-    Login
-    </Link>
-    
-    <Link
-    to="/register"
-    className="btn btn-ghost"
-    >
-    Register
-    </Link>
-    
+    {!user && (
+      <>
+      <Link
+      to="/login"
+      className="btn btn-ghost"
+      >
+      Login
+      </Link>
+      
+      <Link
+      to="/register"
+      className="btn btn-ghost"
+      >
+      Register
+      </Link>
+      
+      </>
+    )} 
     </div>
     </div>
   );
